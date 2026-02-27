@@ -1,0 +1,49 @@
+{
+    "env_name": "hopper-non-stationary-vel",
+    "seed_list": [6, 7, 8],
+    "env_params": {
+        "n_train_tasks": 100,
+        "n_eval_tasks": 30,
+        "use_normalized_env": true,
+        "change_mode": "time",
+        "termination_possible": true,
+        "positive_change_point_basis": 10,
+        "negative_change_point_basis": -10,
+        "task_min_velocity": 0.5,
+        "task_max_velocity": 3.0,
+        "change_point_interval": 1,
+        "state_reconstruction_clip": 5
+    },
+    "algo_params": {
+        "use_data_normalization": true,
+        "use_parametrized_alpha": false,
+        "batch_size_reconstruction": 256,
+        "batch_size_policy": 256,
+        "time_steps": 30,
+        "td_loss_coefficient": 0.5,
+        "sac_layer_size": 300,
+        "max_replay_buffer_size": 10000000,
+        "data_usage_reconstruction": null,
+        "data_usage_sac": null,
+        "num_last_samples": 10000000,
+        "permute_samples": false,
+        "num_train_epochs": 300,
+        "snapshot_gap": 10,
+        "num_reconstruction_steps": 200,
+        "num_policy_steps": 2000,
+        "num_train_tasks_per_episode": 25,
+        "num_transitions_initial": 200,
+        "num_transitions_per_episode": 800,
+        "num_eval_trajectories": 2,
+        "max_path_length": 800,
+        "target_entropy_factor": 1.0,
+        "sac_alpha": 1.0
+    },
+    "reconstruction_params": {
+        "lr_encoder": 0.0003,
+        "train_val_percent": 0.8
+    },
+    "wavelet_params": {
+        "depth": 2
+    }
+}

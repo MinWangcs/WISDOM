@@ -1,0 +1,46 @@
+{
+    "env_name": "metaworld",
+    "seed_list": [3, 4, 5],
+    "env_params": {
+        "n_train_tasks": 50,
+        "n_eval_tasks": 10,
+        "n_tasks": 60,
+        "task_id": 13,
+        "use_normalized_env": false
+    },
+    "algo_params": {
+        "use_data_normalization": true,
+        "use_parametrized_alpha": false,
+        "batch_size_reconstruction": 512,
+        "batch_size_policy": 512,
+        "time_steps": 30,
+        "td_loss_coefficient": 0.9,
+        "latent_size": 5,
+        "sac_layer_size": 300,
+        "max_replay_buffer_size": 100000000,
+        "data_usage_reconstruction": "tree_sampling",
+        "data_usage_sac": "tree_sampling",
+        "num_last_samples": 100000000,
+        "permute_samples": false,
+        "num_train_epochs": 350,
+        "num_reconstruction_steps": 200,
+        "num_policy_steps": 4000,
+        "num_train_tasks_per_episode": 50,
+        "num_transitions_initial": 200,
+        "num_transitions_per_episode": 600,
+        "num_eval_trajectories": 1,
+        "max_path_length": 200,
+        "target_entropy_factor": 1.0,
+        "sac_alpha": 1.0
+    },
+    "reconstruction_params": {
+        "lr_encoder": 0.0003,
+        "train_val_percent": 0.8
+    },
+    "wavelet_params": {
+        "depth": 2
+    },
+    "util_params": {
+        "base_log_dir":"./output/door-close-v2"
+    }
+}
